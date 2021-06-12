@@ -16,6 +16,8 @@ const app =express();
 app.use (express.json());
 const orderRouter = require("./routes/order");
 app.use('/orders',orderRouter)
+const pizzaRouter = require("./routes/pizza");
+app.use('/pizzas',pizzaRouter)
 
 
 const PORT=8000;

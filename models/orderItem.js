@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 
 const OrderItemSchema = new mongoose.Schema({
-    pizza: {
+    pizzas: {
         type: mongoose.SchemaTypes.ObjectId,
         ref: 'Pizza'
 

@@ -6,10 +6,11 @@ const Pizza = require('../models/pizza')
 const getAllPizzas = async () => {
 
     try {
-        let pizzas = await Pizza.find();
+        console.log(Pizza)
+        let pizzas = await Pizza.find({});
         console.log("-----");
         if (pizzas.length === 0) {
-            console.log('No category found')
+            console.log('No pizza found')
         }
         else {
             pizzas.forEach((pizza) => {

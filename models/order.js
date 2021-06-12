@@ -3,12 +3,12 @@ const mongoose = require('mongoose');
 
 const OrderSchema = new mongoose.Schema({
 
- order:{
+   OrderItems:{
     type: mongoose.SchemaTypes.ObjectId,
-    ref: 'orderItem'
+    ref: 'OrderItem'
 
  }
 });
 
 const OrderModule=new mongoose.model('order',OrderSchema);
-module.exports=CategoryModule;
+module.exports=OrderModule;

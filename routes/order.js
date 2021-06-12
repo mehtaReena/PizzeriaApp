@@ -5,19 +5,18 @@ const orderController = require('../controllers/orderController');
 router
 .route("/")
 .get(async (req, res)=>{
-
+    console.log(req.url)
+    console.log(req.query)
+    let orders = await orderController.getAllOrders();
+     res.json(orders);
 
 })
 
-router.get('/:BookID' ,async (req,res ,next)=>{
-    console.log(req.params)
-    let id =req.params.BookID
-    let bookList = await bookController.removeBookByID(id)
-     let List = await bookController.printAllBooks()
-     res.json(List);
 
-     res.redirect('/');
-     next();
+router.get('/:id' ,async (req,res)=>{
+    console.log(req.params)
+    let id =req.params.id
+
 
 })
 
