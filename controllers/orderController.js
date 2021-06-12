@@ -8,10 +8,12 @@ const getAllOrders = async () => {
     try {
 
         let orders =  await Order.findOne({_id: '60c2e0d67e4d610c82b5ce87' })
-        .populate(
-            "orderItem",
-        ).populate('pizza')
-
+        .populate({
+           path: "orderItem", // populate blogs
+           populate: {
+              path: "pizza" // in blogs, populate comments
+           }
+        })
 
         console.log(orders);
         return(orders)
